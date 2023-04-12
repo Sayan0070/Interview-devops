@@ -1,34 +1,17 @@
-#Accept 10 n0 from user
-#Store all that no into a list
-#from that list find only even no
-#print all list and even no
-#display all the sum
-L = []
-c = []
+num_list = []  # initialize an empty list to store the numbers
+even_sum = 0  # initialize a variable to store the sum of the even numbers
 
-while True:
-    try:
-        a = int(input("How many numbers do you want to put? "))
-        if a > 0:
-            break
-        else:
-            print("Please enter a positive integer.")
-    except ValueError:
-        print("Please enter a valid integer.")
+# accept 10 numbers from the user and append to the list
+for i in range(10):
+    num = int(input("Enter a number: "))
+    num_list.append(num)
 
-for i in range(a):
-    while True:
-        try:
-            num = int(input("Enter a number: "))
-            L.append(num)
-            break
-        except ValueError:
-            print("Please enter a valid integer.")
+    if num % 2 == 0:  # if the number is even, add it to even_sum
+        even_sum += num
 
-for i in L:
-    if i % 2 == 0:
-        c.append(i)
+    even_list = [num for num in num_list if num % 2 == 0]  # generate the list of even numbers
 
-print("All numbers:", L)
-print("Even numbers:", c)
-print("Sum of even numbers:", sum(c))
+# print both the entire num_list and even_list
+print("The original list is:", num_list)
+print("The even numbers in the list are:", even_list)
+print("The sum of the even numbers is:", even_sum)
