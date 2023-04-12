@@ -1,5 +1,7 @@
+FROM python:3.9
 
-FROM python:3
-WORKDIR /usr/src/app
-COPY . .
-CMD [ "python","./evenNo.py"]
+WORKDIR /app
+
+COPY evenNo.py .
+
+CMD ["python", "evenNo.py"]
